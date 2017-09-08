@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='click-tester',
-    version='0.0.2',
+    version='1.0.0',
     packages=find_packages(),
     install_requires=[
         'click>=6,<7'
