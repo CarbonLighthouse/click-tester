@@ -10,7 +10,7 @@ install:
   - pip install -r requirements.txt
 #  - pip install coveralls
 script:
-  - pycodestyle cl_noaa test
-  - coverage run --source=cl_noaa -m unittest discover
+  - pycodestyle click_tester test
+  - coverage run --source=click_tester -m unittest discover -b
 #after_success:
 #  - coveralls
