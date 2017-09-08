@@ -1,0 +1,16 @@
+language: python
+python:
+  - 2.7
+  - 3.6
+notifications:
+  email:
+    recipients:
+      - commits+travis@carbonlighthouse.com
+install:
+  - pip install -r requirements.txt
+#  - pip install coveralls
+script:
+  - pycodestyle cl_noaa test
+  - coverage run --source=cl_noaa -m unittest discover
+#after_success:
+#  - coveralls

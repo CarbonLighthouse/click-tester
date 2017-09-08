@@ -100,5 +100,7 @@ ENV/
 # mypy
 .mypy_cache/
 
-# IDE settings
+# OS + IDE + scratch
+.DS_Store
 .idea/
+scratch/
