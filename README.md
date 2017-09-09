@@ -4,6 +4,8 @@ Provides utilities for testing command line tools built with [Pocoo Click librar
 
 ### Install
 
+Available on [pypi](https://pypi.python.org/pypi/click-tester)
+
 ```
 pip install click-tester
 ```
