@@ -2,6 +2,12 @@
 
 Provides utilities for testing command line tools built with [Pocoo Click library](http://click.pocoo.org/6/).
 
+### Install
+
+```
+pip install click-tester
+```
+
 ### ClickRunnerTestCase
 
 A `unittest.TestCase` subclass which provides convenience methods for testing click commands.
