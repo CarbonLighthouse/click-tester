@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+import sys
 import traceback
 from unittest import TestCase
 
@@ -16,7 +17,7 @@ class ClickRunnerTestCase(TestCase):
         result = self.runner.invoke(cmd, opts)
 
         if expected_output_regexp is not None:
-            self.assertRegexpMatches(result.output, expected_output_regexp)
+            self.assertRegex(result.output, expected_output_regexp)
         elif result.output:
             print(result.output)
 
@@ -36,6 +37,12 @@ class ClickRunnerTestCase(TestCase):
         self.assertIsInstance(result.exception, exception_class)
 
         if expected_output_regexp is not None:
-            self.assertRegexpMatches(result.output, expected_output_regexp)
+            self.assertRegex(result.output, expected_output_regexp)
 
         return result
+
+    def assertRegex(self, text, expected_regex):
+        if sys.version_info < (3, 0):
+            return self.assertRegexpMatches(text, expected_regex)
+
+        return super(ClickRunnerTestCase, self).assertRegex(text, expected_regex)
